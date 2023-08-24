@@ -1,5 +1,5 @@
 -- Registrierung des Schwerts in Minetest
-minetest.register_tool("modname:armageddons_blade", {
+minetest.register_tool("armageddons_blade:armageddons_blade", {
     description = "Armageddon's Blade",
     inventory_image = "armageddons_blade.png",
     tool_capabilities = {
