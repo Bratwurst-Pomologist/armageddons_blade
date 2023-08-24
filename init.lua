@@ -45,8 +45,8 @@ minetest.register_tool("modname:armageddons_blade", {
 minetest.register_craft({
     output = "modname:armageddons_blade",
     recipe = {
-        {"", "default:diamond", ""},
-        {"", "default:steel_ingot", ""},
-        {"", "default:obsidian_shard", ""},
+        {"", "default:diamondblock", ""},
+        {"", "default:diamondblock", ""},
+        {"default:gold_ingot", "default:goldblock", "default:gold_ingot"},
     },
 })
