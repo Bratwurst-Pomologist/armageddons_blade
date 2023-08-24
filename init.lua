@@ -9,7 +9,7 @@ minetest.register_tool(modname..":armageddons_blade", {
         groupcaps = {
             snappy = {times = { [1]=1.50, [2]=0.80, [3]=0.40 }, uses = 40, maxlevel = 2},
         },
-        damage_groups = {fleshy = 15},
+        damage_groups = {fleshy = 15, immortal = 1},  -- Schaden gegen Mobs
     },
     on_use = function(itemstack, user, pointed_thing)
         if pointed_thing.type == "object" then
@@ -35,8 +35,13 @@ minetest.register_tool(modname..":armageddons_blade", {
                     texture = "default_dirt.png",
                 })
                 -- Pushe die Spieler weg
-                local dir = entity:get_look_dir()
+                local dir = user:get_look_dir()
                 entity:add_velocity({x = dir.x * 5, y = dir.y * 5, z = dir.z * 5})
+
+                    if entity:is_player() then
+                entity:punch(user, 1.0, {damage_groups = {fleshy = 15}})  -- Schaden an Spieler
+            else
+                entity:punch(user, 1.0, {damage_groups = {fleshy = 5}})  -- Kein Schaden an Mobs
             end
         end
     end,
