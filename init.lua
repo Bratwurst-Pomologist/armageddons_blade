@@ -1,5 +1,6 @@
+modname = minetest.get_current_modname()
 -- Registrierung des Schwerts in Minetest
-minetest.register_tool("armageddons_blade:armageddons_blade", {
+minetest.register_tool(modname..":armageddons_blade", {
     description = "Armageddon's Blade",
     inventory_image = "armageddons_blade.png",
     tool_capabilities = {
@@ -43,7 +44,7 @@ minetest.register_tool("armageddons_blade:armageddons_blade", {
 
 -- Registrierung des Rezepts für das Schwert
 minetest.register_craft({
-    output = "modname:armageddons_blade",
+    output = modname..":armageddons_blade",
     recipe = {
         {"", "default:diamondblock", ""},
         {"", "default:diamondblock", ""},
