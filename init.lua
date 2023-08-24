@@ -8,7 +8,7 @@ minetest.register_tool("modname:armageddons_blade", {
         groupcaps = {
             snappy = {times = { [1]=1.50, [2]=0.80, [3]=0.40 }, uses = 40, maxlevel = 2},
         },
-        damage_groups = {fleshy = 10},
+        damage_groups = {fleshy = 15},
     },
     on_use = function(itemstack, user, pointed_thing)
         if pointed_thing.type == "object" then
